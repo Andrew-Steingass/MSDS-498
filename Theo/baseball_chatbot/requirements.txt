@@ -1,0 +1,23 @@
+# --- CORE FRAMEWORK (The Modern v0.3 Stack) ---
+# We pin these to >=0.3.0 to ensure they don't downgrade to the broken v0.2 versions
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langgraph>=0.2.20
+langchain-text-splitters>=0.3.0
+
+# --- THE MODEL (OpenAI) ---
+# Replaces google-genai
+langchain-openai>=0.2.0
+tiktoken>=0.7.0
+
+# --- DATA & VECTORS (For RAG) ---
+chromadb>=0.5.0
+pandas
+beautifulsoup4
+
+# --- UTILITIES ---
+python-dotenv
+ipykernel
+joblib
+scikit-learn
