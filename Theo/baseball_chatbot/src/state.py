@@ -10,10 +10,7 @@ class AgentState(TypedDict):
     This is the 'clipboard' that gets passed between every agent.
     """
     # Chat History (Appends)
-    messages: Annotated[List[BaseMessage], operator.add]
-
-    # # Bot eye's only when refined agent adds context
-    # resolved_query: str
+    messages: Annotated[list[AnyMessage], add_messages]
     
     # The Decision (Overwrites)
     next_agent: str
