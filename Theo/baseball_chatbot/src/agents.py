@@ -1,8 +1,7 @@
 import os
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, RemoveMessage
-# FIX: Use standard pydantic
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from langgraph.prebuilt import ToolNode
 
 # Import our State and Tools
@@ -19,12 +18,16 @@ llm_smart = ChatOpenAI(model="gpt-4o", temperature=0) #$2.50 / 1M tokens
 # ==============================================================================
 # THE ROUTER AGENT
 # ==============================================================================
-
 # Define the Strict Output Structure
 class RouterOutput(BaseModel):
     destination: str = Field(description="The agent to route to: 'injury_agent', 'pitching_agent', 'batting_agent', or 'general_agent'")
     new_player_detected: bool = Field(description="True ONLY if the user explicitly mentions a NEW player name different from the current context or says new player.")
     player_name: str = Field(description="The name of the NEW player detected. If no new player, leave empty.", default="")
+
+    model_config = ConfigDict(
+        arbitrary_types_allowed=True,
+        populate_by_name=True,
+        )
 
 def router_agent(state: AgentState):
     """
@@ -53,9 +56,10 @@ def router_agent(state: AgentState):
     1. Decide which agent should handle the user's request.
     2. Detect if the user is switching context to a NEW player.
 
-    RULES FOR CONTEXT SWITCHING:
-    - If user names a specific player different from "{current_name}": new_player_detected = True, player_name = "Ohtani".
-    - If user uses pronouns ("he", "him", "his") referring to the current player: new_player_detected = False.
+RULES FOR CONTEXT SWITCHING:
+    - If user names a specific player different from "{current_name}": new_player_detected = True, player_name = [Extracted Name].
+    - If user uses pronouns ("he", "him") AND "{current_name}" is "None": Look at the CHAT HISTORY. If a player was mentioned in the last AI response, set new_player_detected = True, player_name = [That Player].
+    - If user uses pronouns referring to "{current_name}": new_player_detected = False.
     - If user says "Hi", "Thanks", or asks a general rule question: new_player_detected = False.
 
     SPECIALISTS:
@@ -94,7 +98,7 @@ def router_agent(state: AgentState):
     if decision.new_player_detected and decision.player_name:
         # A NEW player was found! 
         # Action: Wipe the slate and set the new name.
-        print(f"\n--- 🔄 SWITCHING CONTEXT: {current_name} -> {decision.player_name} ---")
+        print(f"\n--- SWITCHING CONTEXT: {current_name} -> {decision.player_name} ---")
         updates["profile"] = {"name": decision.player_name}
         updates["ml_inputs"] = {} # Clear old stats (velocity, age) to avoid pollution
     else:
