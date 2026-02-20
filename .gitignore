@@ -26,5 +26,6 @@ Thumbs.db
 *.swp
 
 # Chatbot
-.chainlit
 \chainlit.md
+.chainlit/translations/
+**/.chainlit/translations/
