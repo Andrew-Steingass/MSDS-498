@@ -11,6 +11,10 @@ langchain-text-splitters>=0.3.0
 langchain-openai>=0.2.0
 tiktoken>=0.7.0
 
+# --- UI / FRONTEND ---
+# 2.9.6 is optimized for the 'astream_events' loop used in your Router
+chainlit==2.9.6
+
 # --- DATA & VECTORS (For RAG) ---
 chromadb>=0.5.0
 pandas

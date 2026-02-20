@@ -24,3 +24,8 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+
+# Chatbot
+\chainlit.md
+.chainlit/translations/
+**/.chainlit/translations/
