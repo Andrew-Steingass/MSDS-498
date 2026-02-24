@@ -1,4 +1,6 @@
 import random
+import os
+from langchain_core.tools import tool
 
 """
 THE KITCHEN (Tools)
@@ -52,3 +54,38 @@ def mock_pitching_model(pitch_type: str, spin_rate: int) -> str:
     effectiveness = random.choice(["Elite", "Above Average", "Average", "Below Average"])
     
     return f"Pitch Grade: {effectiveness}. Spin efficiency is consistent with major league averages."
+
+
+
+@tool
+def read_model_documentation(model_topic: str) -> str:
+    """
+    Reads the markdown documentation for a specific model.
+    Input should be a single keyword: 'injury', 'pitching', or 'batting'.
+    """
+    file_map = {
+        "injury": "injury_model_docs.md",
+        "pitching": "pitching_model_docs.md",
+        "batting": "batting_model_docs.md"
+    }
+    
+    topic = model_topic.lower().strip()
+    filename = file_map.get(topic)
+    
+    if not filename:
+        return "Error: Documentation not found. Please ask about the injury, pitching, or batting models."
+    
+    # Get the directory where tools.py lives (baseball_chatbot/src)
+    current_dir = os.path.dirname(__file__)
+    
+    # Step up one level to the project root (baseball_chatbot)
+    project_root = os.path.dirname(current_dir)
+    
+    # Build the absolute path: baseball_chatbot/models/docs/filename
+    filepath = os.path.join(project_root, "models", "docs", filename)
+    
+    try:
+        with open(filepath, "r", encoding="utf-8") as file:
+            return file.read()
+    except FileNotFoundError:
+        return f"System Note: The file {filepath} could not be found. Please verify the folder structure."
