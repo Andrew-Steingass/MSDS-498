@@ -1,6 +1,7 @@
 import os
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, RemoveMessage
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from pydantic import BaseModel, Field, ConfigDict
 from langgraph.prebuilt import ToolNode
 
@@ -23,6 +24,7 @@ class RouterOutput(BaseModel):
     destination: str = Field(description="The agent to route to: 'injury_agent', 'pitching_agent', 'batting_agent', or 'general_agent'")
     new_player_detected: bool = Field(description="True ONLY if the user explicitly mentions a NEW player name different from the current context or says new player.")
     player_name: str = Field(description="The name of the NEW player detected. If no new player, leave empty.", default="")
+    player_id: str = Field(description="The unique Player ID if the user explicitly types it (e.g., 'kershcl01'). Otherwise leave empty.", default="")
 
     model_config = ConfigDict(
         arbitrary_types_allowed=True,
@@ -31,8 +33,7 @@ class RouterOutput(BaseModel):
 
 def router_agent(state: AgentState):
     """
-    This agent analyzes the user's latest message and decides which Specialist
-    should handle it.
+    This agent analyzes the user's latest message and decides which Specialist should handle it.
     """
     # --- DEBUG HISTORY BLOCK ---
     print("\n" + "="*50)
@@ -56,18 +57,18 @@ def router_agent(state: AgentState):
     1. Decide which agent should handle the user's request.
     2. Detect if the user is switching context to a NEW player.
 
-RULES FOR CONTEXT SWITCHING:
+    RULES FOR CONTEXT SWITCHING:
     - If user names a specific player different from "{current_name}": new_player_detected = True, player_name = [Extracted Name].
     - If user uses pronouns ("he", "him") AND "{current_name}" is "None": Look at the CHAT HISTORY. If a player was mentioned in the last AI response, set new_player_detected = True, player_name = [That Player].
     - If user uses pronouns referring to "{current_name}": new_player_detected = False.
     - If user says "Hi", "Thanks", or asks a general rule question: new_player_detected = False.
 
     SPECIALISTS:
-    1. 'injury_agent' - Model powered. Use for specific calculations on health, surgery risk, or "Assess [Player]".
-    2. 'pitching_agent' - Model powered. Use for specific calculations on pitch mechanics, spin rate, velocity.
-    3. 'batting_agent' - Model powered. Use for specific calculations on matchup probabilities or expected batting average.
-    4. 'general_agent' - Use for greetings, history, rules, or broad baseball questions (e.g., "Who won the 1990 World Series?", "What is a slider?").
-    5. 'model_explainer_agent': Use ONLY when the user asks HOW a model works, what features it uses, or requests mathematical explanations, or what models are avi.
+    1. injury_agent: Model powered. Medical, injury risk, surgery probability.
+    2. pitching_agent: Model powered. Future performance prediction, ERA outlook, 'What-If' scenarios for pitchers. Looking at improving or stagnation.
+    3. batting_agent - Model powered. Use for specific calculations on matchup probabilities or expected batting average.
+    4. general_agent - Use for greetings, history, rules, or broad baseball questions (e.g., "Who won the 1990 World Series?", "What is a slider?").
+    5. model_explainer_agent: Use ONLY when the user asks HOW a model works, what features it uses, or requests mathematical explanations, or what models are avi.
     
     CRITICAL INSTRUCTION - CONTEXT CHECK:
     - Look at the LAST message from the AI.
@@ -95,64 +96,38 @@ RULES FOR CONTEXT SWITCHING:
     # Handle the Logic
     updates = {"next_agent": decision.destination}
     
+    # --- LOGIC UPDATE: Handle Name AND ID ---
     if decision.new_player_detected and decision.player_name:
         # A NEW player was found! 
-        # Action: Wipe the slate and set the new name.
         print(f"\n--- SWITCHING CONTEXT: {current_name} -> {decision.player_name} ---")
-        updates["profile"] = {"name": decision.player_name}
-        updates["ml_inputs"] = {} # Clear old stats (velocity, age) to avoid pollution
+        
+        # Create the new profile dict
+        # We check if 'decision.player_id' exists (it defaults to empty string "" in your model)
+        new_id = decision.player_id if decision.player_id else None
+        
+        updates["profile"] = {
+            "name": decision.player_name,
+            "id": new_id  # Store the ID if provided!
+        }
+        
+        # Clear old stats to avoid pollution
+        updates["ml_inputs"] = {} 
+
+    # Edge Case: User updates ONLY the ID for the CURRENT player
+    # e.g. "Actually, use ID kershcl01" (without saying a new name)
+    elif decision.player_id and not decision.new_player_detected:
+        # Copy the existing profile so we don't lose the name
+        updated_profile = current_profile.copy()
+        updated_profile["id"] = decision.player_id
+        
+        updates["profile"] = updated_profile
+        print(f"\n--- UPDATING ID: {decision.player_id} for {current_name} ---")
     else:
         # No new player. Keep the old profile and inputs.
         pass
 
     return updates
     
-
-# # ==============================================================================
-# # THE CONTEXT REFINER - ONLY ADDING IF NEEDED
-# # ==============================================================================
-# def context_refiner_node(state: AgentState):
-#     """
-#     Pre-processing node.
-#     Looks at the chat history and the latest user message.
-#     If the latest message uses pronouns (he, she, it, they, their) or is ambiguous,
-#     it rewrites the message to be standalone and explicit.
-#     """
-#     latest_msg = state["messages"][-1].content
-    
-#     # We only run this if the message is short or likely ambiguous to save tokens
-#     # (Optional optimization)
-    
-#     system_prompt = """You are a Context Refiner.
-#     Your job is to rewrite the user's latest query to be fully standalone based on the chat history.
-    
-#     RULES:
-#     1. Replace pronouns (he, she, it, they) with specific names/entities from the chat history.
-#     2. If the query is already clear, output it EXACTLY as is.
-#     3. Do NOT answer the question. Just rewrite it.
-    
-#     Example:
-#     Chat History: "Who won the 1999 World Series?" -> "The Yankees."
-#     User: "Who was their manager?"
-#     Output: "Who was the Yankees' manager in 1999?"
-#     """
-    
-#     messages = [SystemMessage(content=system_prompt)] + state["messages"]
-    
-#     response = llm_fast.invoke(messages)
-#     rewritten_query = response.content
-    
-#     if rewritten_query != latest_msg:
-#         print(f"REWRITER: '{latest_msg}' -> '{rewritten_query}'")
-        
-#         # We replace the last message with the clearer version so the Agents see it too
-#         # Note: In a real app, you might want to keep the original for the UI, 
-#         # but for the logic, we want the clean version.
-#         from langchain_core.messages import HumanMessage
-#         return {"messages": [HumanMessage(content=rewritten_query)]}
-    
-#     return {} # No change
-
 
 # ==============================================================================
 # THE GENERAL ASSISTANT
@@ -216,22 +191,66 @@ def get_injury_tool_node():
 # THE PITCHING SPECIALIST
 # ==============================================================================
 def pitching_agent(state: AgentState):
-    system_prompt = """You are a Pitching Performance Expert.
-    Your goal is to grade pitch quality.
-    
-    To use the model, you need:
-    1. Pitch Type (Fastball, Slider, etc.)
-    2. Spin Rate (int)
-    
-    If missing any, ask the user. If all are present, 'mock_pitching_model'."""
-    
-    llm_with_tools = llm_smart.bind_tools([mock_pitching_model])
-    messages = [SystemMessage(content=system_prompt)] + state["messages"]
-    return {"messages": [llm_with_tools.invoke(messages)]}
+    """
+    The specialized node for Pitching Analysis.
+    Integrates State (Profile + ML Inputs) into the prompt.
+    """
+    pitching_tools = [predict_pitching_2016]
+    llm_with_tools = llm_smart.bind_tools(pitching_tools)
+    PITCHING_SYSTEM_PROMPT = """
+        You are the Pitching Analytics Specialist for Spin Rate Consulting (2015-2016 Offseason).
+        Your goal is to predict if a pitcher will improve their ERA in 2016 using the 'predict_pitching_2016' tool.
 
-# Tool Node for Pitching
-def get_pitching_tool_node():
-    return ToolNode([mock_pitching_model])
+        ### CURRENT CONTEXT (READ CAREFULLY)
+        - **Active Player Profile**: {active_player}
+        - **Current Simulation Overrides**: {ml_inputs}
+
+        ### INSTRUCTIONS
+        1. **Identify the Player**: 
+        - If the user says "he", "him", or "the pitcher", you MUST use the **Active Player Profile** defined above.
+        - If the user specifies a new name (e.g., "Check Kershaw"), use that name.
+
+        2. **Handle Simulation Data**:
+        - The 'Current Simulation Overrides' dictionary contains stats the user has previously set (e.g., {{'era': 2.50}}).
+        - When calling `predict_pitching_2016`, you MUST pass these values as arguments unless the user explicitly changes them in this turn.
+        - Example: If inputs are {{'era': 2.50}} and user says "Run prediction", call `predict_pitching_2016(player_name="...", era=2.50)`.
+
+        3. **Ambiguity Handling**:
+        - If the tool returns a list of "Did you mean...?" suggestions, DO NOT guess. 
+        - Stop and ask the user to clarify exactly which player they mean incorporating the tool output (e.g., "Did you mean the Will Smith born in 1989?").
+
+        4. **Response Style**:
+        - Be professional but concise. 
+        - Present the "Stagnation Risk" clearly.
+        - If running a simulation, explicitly state: "Based on a hypothetical ERA of [X]..."
+        """
+    
+    """
+    State-Aware Pitching Node.
+    Injects profile & ml_inputs into the system prompt before invoking the LLM.
+    """
+    # Extract persistent state
+    profile = state.get("profile", "Unknown")
+    ml_inputs = state.get("ml_inputs", {})
+    
+    # Format the prompt with current context
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", PITCHING_SYSTEM_PROMPT),
+        MessagesPlaceholder(variable_name="messages"),
+    ])
+    
+    # Generate the chain
+    chain = prompt | llm_with_tools
+    
+    # Execute
+    # We pass the full message history plus our injected variables
+    response = chain.invoke({
+        "messages": state["messages"],
+        "active_player": profile,
+        "ml_inputs": str(ml_inputs)
+    })
+
+    return {"messages": [response]}
 
 # ==============================================================================
 # THE BATTING SPECIALIST
@@ -316,8 +335,8 @@ def model_explainer_agent(state: AgentState):
 def get_injury_tool_node(): 
     return ToolNode([mock_injury_model])
 
-def get_pitching_tool_node(): 
-    return ToolNode([mock_pitching_model])
+# def get_pitching_tool_node(): 
+#     return ToolNode([mock_pitching_model])
 
 def get_batting_tool_node(): 
     return ToolNode([mock_batting_model])

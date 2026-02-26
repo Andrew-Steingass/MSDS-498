@@ -11,6 +11,7 @@ class AgentState(TypedDict):
     """
     # Chat History (Appends)
     messages: Annotated[list[AnyMessage], add_messages]
+    router_out: any
     
     # The Decision (Overwrites)
     next_agent: str
