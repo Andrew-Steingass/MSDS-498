@@ -24,7 +24,7 @@ def build_graph():
     
     # Tool Nodes
     builder.add_node("injury_tools", get_injury_tool_node())
-    builder.add_node("pitching_tools", get_pitching_tool_node())
+    builder.add_node("pitching_tools", ToolNode([predict_pitching_2016]))
     builder.add_node("batting_tools", get_batting_tool_node())
     builder.add_node("explainer_tools", get_explainer_tool_node())
 
