@@ -1,0 +1,490 @@
+playerID,yearID,Predicted_Class,Prediction_Label,Predicted_Probability_NotImproved
+aceveal01,2011,1,Not Improved,0.90835685
+affelje01,2011,1,Not Improved,0.8247357
+affelje01,2012,1,Not Improved,0.83537394
+affelje01,2013,0,Improved,0.45802996
+alberma01,2011,0,Improved,0.27290398
+anderbr04,2011,1,Not Improved,0.5587654
+anderbr04,2012,1,Not Improved,0.8238864
+anderbr04,2013,0,Improved,0.06081481
+arrieja01,2013,1,Not Improved,0.6105839
+arroybr01,2011,0,Improved,0.28556973
+arroybr01,2012,1,Not Improved,0.72402316
+atchisc01,2011,1,Not Improved,0.77754897
+atchisc01,2012,1,Not Improved,0.9586256
+axforjo01,2012,0,Improved,0.1942925
+axforjo01,2013,0,Improved,0.22671452
+ayalalu01,2011,1,Not Improved,0.95566165
+badenbu01,2011,0,Improved,0.37986392
+badenbu01,2012,1,Not Improved,0.8227071
+badenbu01,2013,1,Not Improved,0.58713347
+baileho02,2011,0,Improved,0.35313657
+baileho02,2012,1,Not Improved,0.5799888
+balfogr01,2011,1,Not Improved,0.8779464
+balfogr01,2012,1,Not Improved,0.85156935
+bastaan01,2013,1,Not Improved,0.9103088
+beckejo02,2011,1,Not Improved,0.8622509
+beckejo02,2012,0,Improved,0.20884483
+beckejo02,2012,1,Not Improved,0.82624114
+bedarer01,2011,1,Not Improved,0.59425414
+bedarer01,2011,0,Improved,0.35022393
+bedarer01,2012,0,Improved,0.13215637
+belisma01,2013,0,Improved,0.21851374
+belisma01,2011,1,Not Improved,0.7565042
+belisma01,2012,0,Improved,0.38716578
+belisro01,2012,1,Not Improved,0.8512323
+bellhe01,2011,1,Not Improved,0.88563824
+benoijo01,2011,1,Not Improved,0.7242035
+benoijo01,2012,0,Improved,0.39646617
+benoijo01,2013,1,Not Improved,0.9293353
+billich01,2011,0,Improved,0.43251073
+blantjo01,2011,0,Improved,0.16323398
+blantjo01,2012,0,Improved,0.33162183
+blantjo01,2012,0,Improved,0.19318119
+blantjo01,2013,0,Improved,0.0967768
+breslcr01,2011,0,Improved,0.32541248
+breslcr01,2013,1,Not Improved,0.9695752
+brittza01,2013,0,Improved,0.26451594
+broxtjo01,2013,0,Improved,0.26649955
+buchhcl01,2011,1,Not Improved,0.7075803
+buchhcl01,2012,0,Improved,0.21004847
+buchhcl01,2013,1,Not Improved,0.97724664
+buehrma01,2011,1,Not Improved,0.7185934
+buehrma01,2012,1,Not Improved,0.6564571
+buehrma01,2013,1,Not Improved,0.50809956
+bumgama01,2012,1,Not Improved,0.6249937
+bumgama01,2013,1,Not Improved,0.81618744
+burneaj01,2011,0,Improved,0.152276
+burneaj01,2012,1,Not Improved,0.58453995
+burneaj01,2013,1,Not Improved,0.6443378
+burtoja01,2012,1,Not Improved,0.9336874
+cahiltr01,2012,1,Not Improved,0.53703386
+cahiltr01,2011,1,Not Improved,0.6015369
+cainma01,2013,0,Improved,0.38772884
+cainma01,2011,1,Not Improved,0.83170927
+cainma01,2012,1,Not Improved,0.8290269
+capuach01,2011,0,Improved,0.33333367
+capuach01,2012,1,Not Improved,0.54255635
+capuach01,2013,0,Improved,0.42270032
+capuach01,2014,0,Improved,0.2600287
+carmofa01,2011,0,Improved,0.3363573
+carmofa01,2013,0,Improved,0.22571664
+carmofa01,2014,1,Not Improved,0.6489418
+carraca01,2013,0,Improved,0.05126735
+cashnan01,2013,1,Not Improved,0.86777544
+cecilbr01,2011,0,Improved,0.3726803
+cecilbr01,2012,0,Improved,0.088009804
+cecilbr01,2013,1,Not Improved,0.824227
+chacijh01,2012,0,Improved,0.27130285
+chapmar01,2013,1,Not Improved,0.8210776
+chenbr01,2011,1,Not Improved,0.6387403
+chenbr01,2012,0,Improved,0.19063069
+cishest01,2013,1,Not Improved,0.8887808
+clippty01,2011,1,Not Improved,0.92654157
+clippty01,2012,0,Improved,0.35798553
+clippty01,2013,1,Not Improved,0.85115254
+clippty01,2014,1,Not Improved,0.92872673
+cokeph01,2011,0,Improved,0.34150428
+cokeph01,2012,0,Improved,0.47753167
+collmjo01,2013,1,Not Improved,0.7585016
+colonba01,2011,0,Improved,0.48945072
+colonba01,2012,1,Not Improved,0.7753647
+colonba01,2013,1,Not Improved,0.89632463
+correke01,2012,1,Not Improved,0.6088883
+correke01,2011,0,Improved,0.27058345
+cottsne01,2013,1,Not Improved,0.947005
+crainje01,2011,1,Not Improved,0.86748797
+cuetojo01,2011,1,Not Improved,0.95471954
+cuetojo01,2012,1,Not Improved,0.8826568
+cuetojo01,2013,1,Not Improved,0.7536851
+cuetojo01,2014,1,Not Improved,0.9209717
+danksjo01,2011,0,Improved,0.43042916
+danksjo01,2012,0,Improved,0.08051783
+danksjo01,2013,0,Improved,0.33726233
+daviswa01,2011,0,Improved,0.41233665
+daviswa01,2012,1,Not Improved,0.8805306
+daviswa01,2013,0,Improved,0.14901929
+delarjo01,2013,1,Not Improved,0.69769543
+delarjo01,2011,1,Not Improved,0.6104237
+delgara01,2013,0,Improved,0.3453822
+dempsry01,2011,0,Improved,0.21932682
+dempsry01,2012,1,Not Improved,0.9269591
+detwiro01,2013,1,Not Improved,0.52822053
+dickera01,2011,1,Not Improved,0.8209556
+dickera01,2012,1,Not Improved,0.739124
+dickera01,2013,0,Improved,0.41225705
+duensbr01,2011,0,Improved,0.15491387
+duensbr01,2012,0,Improved,0.16848974
+duensbr01,2013,1,Not Improved,0.5195084
+dunnmi01,2013,1,Not Improved,0.881843
+eovalna01,2013,1,Not Improved,0.7362216
+eovalna01,2012,0,Improved,0.30266133
+estrama01,2013,0,Improved,0.40302688
+feldmsc01,2013,0,Improved,0.44761655
+feldmsc01,2013,1,Not Improved,0.6654639
+feldmsc01,2011,1,Not Improved,0.630382
+feldmsc01,2012,0,Improved,0.24096371
+felizne01,2011,1,Not Improved,0.8331915
+fistedo01,2011,1,Not Improved,0.82777876
+fistedo01,2011,1,Not Improved,0.94568276
+fistedo01,2012,1,Not Improved,0.62245727
+fistedo01,2013,1,Not Improved,0.53010774
+francje01,2011,0,Improved,0.36047736
+frasoja01,2011,1,Not Improved,0.75461024
+frierer01,2012,1,Not Improved,0.85784984
+furbuch01,2012,1,Not Improved,0.8333606
+gallayo01,2011,1,Not Improved,0.5364554
+gallayo01,2012,1,Not Improved,0.52566266
+gallayo01,2013,0,Improved,0.4366335
+garcifr02,2011,1,Not Improved,0.71416974
+garcija01,2011,1,Not Improved,0.9660981
+garcija01,2012,1,Not Improved,0.7824722
+garcija01,2013,1,Not Improved,0.90678537
+garcija02,2012,0,Improved,0.39760467
+garcija02,2013,1,Not Improved,0.63275206
+garzama01,2011,1,Not Improved,0.66234636
+garzama01,2012,0,Improved,0.48510808
+garzama01,2013,1,Not Improved,0.7729343
+garzama01,2013,0,Improved,0.25189975
+geedi01,2012,0,Improved,0.29356417
+geedi01,2013,1,Not Improved,0.671762
+gomezje01,2012,0,Improved,0.09041137
+gomezje01,2013,1,Not Improved,0.8061181
+gonzagi01,2013,1,Not Improved,0.5908374
+gonzagi01,2012,1,Not Improved,0.78035784
+gonzagi01,2011,1,Not Improved,0.81514055
+gonzami02,2011,0,Improved,0.24669695
+gorzeto01,2011,0,Improved,0.4607733
+gregelu01,2011,1,Not Improved,0.8621135
+gregelu01,2012,1,Not Improved,0.9008227
+gregelu01,2013,1,Not Improved,0.7476312
+greggke01,2011,0,Improved,0.34191948
+greinza01,2011,0,Improved,0.35780928
+greinza01,2012,1,Not Improved,0.6297569
+greinza01,2012,1,Not Improved,0.58142924
+greinza01,2013,1,Not Improved,0.92699146
+grillja01,2011,1,Not Improved,0.86422
+grillja01,2012,1,Not Improved,0.6941589
+guthrje01,2013,1,Not Improved,0.7150683
+guthrje01,2012,1,Not Improved,0.8393755
+guthrje01,2012,0,Improved,0.08760968
+guthrje01,2011,1,Not Improved,0.54353386
+hallaro01,2011,1,Not Improved,0.87502444
+hamelco01,2011,1,Not Improved,0.87172085
+hamelco01,2012,1,Not Improved,0.7171137
+hamelco01,2013,0,Improved,0.48837408
+hamelco01,2014,1,Not Improved,0.9088612
+hammeja01,2011,0,Improved,0.33835265
+hammeja01,2012,1,Not Improved,0.7302408
+hammeja01,2013,0,Improved,0.24724507
+hammeja01,2014,1,Not Improved,0.8046731
+hansoto01,2011,0,Improved,0.47588438
+happja01,2014,0,Improved,0.44712907
+happja01,2013,0,Improved,0.29296273
+happja01,2012,0,Improved,0.20349327
+happja01,2012,0,Improved,0.27515867
+happja01,2011,0,Improved,0.1498031
+haranaa01,2011,1,Not Improved,0.6771318
+haranaa01,2012,1,Not Improved,0.6744271
+harenda01,2011,1,Not Improved,0.8575944
+harenda01,2012,0,Improved,0.27963382
+harenda01,2013,0,Improved,0.1940832
+harenda01,2014,0,Improved,0.442012
+hawkila01,2011,1,Not Improved,0.85741913
+hawkila01,2012,1,Not Improved,0.5051528
+hellije01,2012,1,Not Improved,0.8605973
+hellije01,2013,0,Improved,0.15288074
+hernada01,2011,1,Not Improved,0.6069104
+hernada01,2012,1,Not Improved,0.8865814
+hernafe02,2013,1,Not Improved,0.73838687
+hernafe02,2011,0,Improved,0.44674912
+hernafe02,2012,1,Not Improved,0.6792453
+hernali01,2011,0,Improved,0.43508294
+hochelu01,2011,0,Improved,0.3899638
+hochelu01,2012,0,Improved,0.124837995
+hollade01,2011,1,Not Improved,0.5325209
+hollade01,2012,0,Improved,0.238805
+hollade01,2013,1,Not Improved,0.73182726
+hollagr01,2013,1,Not Improved,0.95575935
+howeljp01,2011,0,Improved,0.061912823
+howeljp01,2012,1,Not Improved,0.8074673
+howeljp01,2013,1,Not Improved,0.95311195
+hudsoti01,2013,0,Improved,0.46033928
+hudsoti01,2012,1,Not Improved,0.53916055
+hudsoti01,2011,1,Not Improved,0.80854744
+hugheph01,2011,0,Improved,0.0673145
+hugheph01,2012,0,Improved,0.4907668
+hugheph01,2013,0,Improved,0.25377497
+hunteto02,2011,0,Improved,0.17355387
+hunteto02,2012,0,Improved,0.26832595
+hunteto02,2013,1,Not Improved,0.8723371
+jacksed01,2011,1,Not Improved,0.51209646
+jacksed01,2011,1,Not Improved,0.5821644
+jacksed01,2012,1,Not Improved,0.5436945
+jacksed01,2013,0,Improved,0.1515705
+janseke01,2013,1,Not Improved,0.90565395
+janssca01,2013,1,Not Improved,0.8596641
+janssca01,2012,1,Not Improved,0.81063735
+janssca01,2011,1,Not Improved,0.9293435
+jepseke01,2012,1,Not Improved,0.7828633
+jepseke01,2013,0,Improved,0.25881204
+jimenub01,2011,0,Improved,0.28414953
+jimenub01,2011,0,Improved,0.12011559
+jimenub01,2012,0,Improved,0.14676991
+jimenub01,2013,1,Not Improved,0.6664992
+johnsji04,2012,1,Not Improved,0.8205432
+johnsji04,2013,1,Not Improved,0.6484186
+johnsjo09,2011,1,Not Improved,0.95766336
+kazmisc01,2013,0,Improved,0.3269068
+kazmisc01,2014,1,Not Improved,0.6001888
+kellyjo05,2014,0,Improved,0.33432582
+kendrky01,2012,1,Not Improved,0.67220944
+kendrky01,2013,0,Improved,0.27191174
+kendrky01,2011,1,Not Improved,0.8808694
+kenneia01,2013,0,Improved,0.4256125
+kenneia01,2013,0,Improved,0.13538204
+kenneia01,2012,0,Improved,0.4247019
+kenneia01,2011,1,Not Improved,0.8875671
+kershcl01,2011,1,Not Improved,0.9051509
+kershcl01,2012,1,Not Improved,0.87208116
+kershcl01,2013,1,Not Improved,0.9305256
+kimbrcr01,2013,1,Not Improved,0.9362178
+kurodhi01,2011,1,Not Improved,0.84528726
+kurodhi01,2012,1,Not Improved,0.70831025
+lackejo01,2011,0,Improved,0.056855705
+lackejo01,2013,1,Not Improved,0.6456424
+lackejo01,2014,1,Not Improved,0.55331105
+lannajo01,2011,1,Not Improved,0.7027165
+latosma01,2012,1,Not Improved,0.60806763
+latosma01,2013,1,Not Improved,0.7502982
+latosma01,2011,1,Not Improved,0.65174454
+leagubr01,2011,1,Not Improved,0.857919
+leakemi01,2012,0,Improved,0.35245794
+leakemi01,2013,1,Not Improved,0.82016784
+leakemi01,2014,1,Not Improved,0.6597476
+leblawa01,2011,0,Improved,0.29918987
+lecursa01,2012,1,Not Improved,0.73684037
+leecl02,2011,1,Not Improved,0.9008474
+leecl02,2012,1,Not Improved,0.7755426
+lestejo01,2011,1,Not Improved,0.59922475
+lestejo01,2012,0,Improved,0.19296601
+lestejo01,2013,0,Improved,0.46946892
+lestejo01,2014,1,Not Improved,0.879465
+lewisco01,2012,1,Not Improved,0.6661556
+lewisco01,2011,0,Improved,0.44233885
+linceti01,2013,0,Improved,0.23405412
+linceti01,2012,0,Improved,0.13173024
+linceti01,2011,1,Not Improved,0.8309828
+lindsma01,2011,1,Not Improved,0.8494642
+lindsma01,2012,1,Not Improved,0.8662526
+liriafr01,2011,0,Improved,0.21388608
+liriafr01,2012,0,Improved,0.13745683
+liriafr01,2012,0,Improved,0.15868165
+liriafr01,2013,1,Not Improved,0.80280507
+loganbo02,2011,0,Improved,0.49865443
+lohseky01,2011,1,Not Improved,0.8177497
+lohseky01,2012,1,Not Improved,0.8907704
+lohseky01,2013,1,Not Improved,0.76211673
+lopezja02,2011,1,Not Improved,0.73663884
+lopezja02,2012,1,Not Improved,0.84475774
+lopezja02,2013,1,Not Improved,0.93254566
+lowema01,2011,0,Improved,0.45048925
+lylesjo01,2013,0,Improved,0.12705211
+lynnla01,2013,0,Improved,0.4623722
+maholpa01,2011,1,Not Improved,0.7019534
+maholpa01,2012,1,Not Improved,0.6722574
+maholpa01,2012,1,Not Improved,0.6260817
+marcush01,2011,1,Not Improved,0.61930984
+marcush01,2012,1,Not Improved,0.5284977
+marquja01,2011,1,Not Improved,0.65534467
+marquja01,2012,0,Improved,0.096385084
+marquja01,2012,1,Not Improved,0.6354493
+masteju01,2011,1,Not Improved,0.8190242
+masteju01,2012,0,Improved,0.23972988
+masteju01,2013,1,Not Improved,0.6223486
+masteju01,2014,0,Improved,0.17718147
+matsuda01,2012,0,Improved,0.07644723
+matsuda01,2011,0,Improved,0.16373658
+matusbr01,2011,0,Improved,0.062440436
+matusbr01,2012,0,Improved,0.27597713
+matusbr01,2013,1,Not Improved,0.5285532
+mccarbr01,2011,1,Not Improved,0.8093124
+mccarbr01,2012,1,Not Improved,0.8246998
+mccarbr01,2013,0,Improved,0.27364454
+medlekr01,2012,1,Not Improved,0.9592978
+melanma01,2013,1,Not Improved,0.94065386
+mijarjo01,2011,0,Improved,0.23344703
+mileywa01,2013,1,Not Improved,0.7302533
+millean01,2011,0,Improved,0.13082086
+millean01,2012,1,Not Improved,0.6420878
+minormi01,2012,0,Improved,0.4621629
+morrobr01,2013,0,Improved,0.08737823
+morrobr01,2011,0,Improved,0.31760737
+morrobr01,2012,1,Not Improved,0.84267074
+mortoch02,2011,1,Not Improved,0.6102429
+mortoch02,2012,0,Improved,0.39284158
+mortoch02,2013,1,Not Improved,0.7695879
+mujiced01,2011,1,Not Improved,0.7868282
+mujiced01,2013,1,Not Improved,0.86341244
+myersbr01,2011,0,Improved,0.49578342
+nathajo01,2011,0,Improved,0.1483557
+nathajo01,2012,1,Not Improved,0.72104025
+nicasju01,2013,0,Improved,0.1519195
+niesejo01,2013,1,Not Improved,0.64297664
+niesejo01,2012,1,Not Improved,0.7109647
+nolasri01,2013,1,Not Improved,0.622224
+nolasri01,2013,1,Not Improved,0.58186233
+nolasri01,2011,0,Improved,0.279222
+nolasri01,2012,0,Improved,0.3937863
+norribu01,2011,1,Not Improved,0.54124755
+norribu01,2012,0,Improved,0.33829853
+norribu01,2013,1,Not Improved,0.50882065
+norribu01,2013,0,Improved,0.28005725
+odayda01,2012,1,Not Improved,0.8766753
+odayda01,2013,1,Not Improved,0.9208714
+ohlenro01,2011,0,Improved,0.098294824
+oliveda02,2011,1,Not Improved,0.8236522
+ondrulo01,2012,1,Not Improved,0.7135038
+oswalro01,2011,1,Not Improved,0.5616323
+papeljo01,2013,1,Not Improved,0.7794671
+papeljo01,2011,1,Not Improved,0.5459697
+papeljo01,2012,1,Not Improved,0.826852
+parnebo01,2011,0,Improved,0.40246373
+parrama01,2012,0,Improved,0.19225995
+parrama01,2013,1,Not Improved,0.5573648
+peavyja01,2011,0,Improved,0.10175355
+peavyja01,2012,1,Not Improved,0.68660337
+peavyja01,2013,0,Improved,0.39287966
+peavyja01,2013,0,Improved,0.39147383
+peavyja01,2014,0,Improved,0.2999256
+peraljo01,2011,1,Not Improved,0.6330847
+peraljo01,2012,0,Improved,0.27350783
+perezch01,2011,1,Not Improved,0.7423084
+perezch01,2012,0,Improved,0.37478974
+perkigl01,2012,1,Not Improved,0.82057786
+perkigl01,2013,1,Not Improved,0.8796077
+petityu01,2013,1,Not Improved,0.59921044
+porceri01,2013,0,Improved,0.47873318
+porceri01,2012,0,Improved,0.41156644
+porceri01,2011,0,Improved,0.3251675
+priceda01,2011,1,Not Improved,0.5885988
+priceda01,2012,1,Not Improved,0.880238
+priceda01,2013,1,Not Improved,0.65558004
+priceda01,2014,1,Not Improved,0.66336
+priceda01,2014,0,Improved,0.47847372
+putzjj01,2011,1,Not Improved,0.8732872
+quallch01,2011,1,Not Improved,0.5247347
+quallch01,2012,0,Improved,0.21544474
+quallch01,2013,1,Not Improved,0.89104444
+ramosce01,2013,0,Improved,0.35380903
+richacl01,2011,1,Not Improved,0.61617756
+richacl01,2012,1,Not Improved,0.6085171
+roberda08,2013,1,Not Improved,0.8562128
+roberda08,2011,1,Not Improved,0.9576779
+roberda08,2012,1,Not Improved,0.8651364
+rodnefe01,2011,0,Improved,0.32406905
+rodnefe01,2012,1,Not Improved,0.94211596
+rodnefe01,2013,0,Improved,0.39132825
+rodriwa01,2011,1,Not Improved,0.5851031
+rodriwa01,2012,0,Improved,0.48987117
+romose01,2011,1,Not Improved,0.9231676
+romose01,2012,1,Not Improved,0.9316148
+romose01,2013,1,Not Improved,0.85311395
+rossty01,2012,0,Improved,0.07327179
+rossty01,2013,1,Not Improved,0.73117787
+russeja02,2012,1,Not Improved,0.79927725
+sabatcc01,2013,0,Improved,0.17422591
+sabatcc01,2011,1,Not Improved,0.7612605
+sabatcc01,2012,1,Not Improved,0.61192256
+salech01,2013,1,Not Improved,0.77037746
+samarje01,2012,0,Improved,0.37439483
+samarje01,2013,0,Improved,0.2730725
+samarje01,2014,1,Not Improved,0.86281383
+sanchan01,2011,0,Improved,0.4898606
+sanchan01,2012,0,Improved,0.4709319
+sanchan01,2012,0,Improved,0.45859587
+sanchan01,2013,1,Not Improved,0.8994021
+santaer01,2013,1,Not Improved,0.79225475
+santaer01,2011,1,Not Improved,0.7737448
+santaer01,2012,0,Improved,0.14754196
+saundjo01,2012,1,Not Improved,0.6915117
+saundjo01,2012,1,Not Improved,0.5627357
+saundjo01,2011,1,Not Improved,0.7328747
+scherma01,2011,0,Improved,0.29505032
+scherma01,2012,0,Improved,0.425512
+scherma01,2013,1,Not Improved,0.8057336
+shielja02,2011,1,Not Improved,0.8693227
+shielja02,2012,1,Not Improved,0.54374397
+shielja02,2013,1,Not Improved,0.73927283
+simonal01,2013,1,Not Improved,0.88280547
+simonal01,2012,1,Not Improved,0.8812941
+sippto01,2012,0,Improved,0.30525458
+sippto01,2013,0,Improved,0.22035578
+sippto01,2011,1,Not Improved,0.792325
+sloweke01,2011,0,Improved,0.08291623
+smithjo05,2012,1,Not Improved,0.81831706
+smithjo05,2011,1,Not Improved,0.95372677
+smithjo05,2013,1,Not Improved,0.9111283
+smylydr01,2014,0,Improved,0.44336727
+soriara01,2011,0,Improved,0.3291753
+soriara01,2012,1,Not Improved,0.8881421
+stammcr01,2012,1,Not Improved,0.9357165
+staufti01,2011,1,Not Improved,0.61552393
+storedr01,2012,1,Not Improved,0.8600224
+storedr01,2013,0,Improved,0.15978067
+streehu01,2011,0,Improved,0.37803322
+streehu01,2012,1,Not Improved,0.9338256
+stulter01,2012,1,Not Improved,0.8785955
+stulter01,2013,1,Not Improved,0.6380294
+swarzan01,2012,0,Improved,0.2921312
+tillmch01,2013,1,Not Improved,0.6344994
+tillmch01,2012,1,Not Improved,0.8238591
+tillmch01,2011,0,Improved,0.3143657
+tomlijo01,2012,0,Improved,0.07517133
+ueharko01,2011,1,Not Improved,0.8776773
+ueharko01,2012,1,Not Improved,0.9083885
+ueharko01,2013,1,Not Improved,0.9310822
+vargaja01,2011,1,Not Improved,0.61959416
+vargaja01,2012,1,Not Improved,0.60298574
+vargaja01,2013,1,Not Improved,0.5960186
+verasjo01,2012,0,Improved,0.44595632
+verlaju01,2011,1,Not Improved,0.8665611
+verlaju01,2012,1,Not Improved,0.88608414
+verlaju01,2013,1,Not Improved,0.5394467
+villaca01,2012,0,Improved,0.383632
+villaca01,2013,1,Not Improved,0.5164854
+villaca01,2011,0,Improved,0.4257938
+vogelry01,2011,1,Not Improved,0.89891064
+vogelry01,2012,1,Not Improved,0.7116799
+vogelry01,2013,0,Improved,0.060681004
+volqued01,2011,0,Improved,0.08940133
+volqued01,2012,0,Improved,0.46673322
+wainwad01,2012,0,Improved,0.3061704
+watsoto01,2013,1,Not Improved,0.87287825
+weaveje02,2011,1,Not Improved,0.89358723
+weaveje02,2012,1,Not Improved,0.8531991
+weaveje02,2013,1,Not Improved,0.6604569
+webbry01,2012,0,Improved,0.3512009
+webbry01,2013,1,Not Improved,0.79365927
+westbja01,2011,0,Improved,0.42935863
+wilheto01,2013,0,Improved,0.38073382
+willije02,2011,1,Not Improved,0.682207
+willije02,2012,0,Improved,0.43748662
+willije02,2013,0,Improved,0.35973188
+willije02,2014,0,Improved,0.0867522
+wilsocj01,2011,1,Not Improved,0.8204424
+wilsocj01,2012,0,Improved,0.44679904
+wilsocj01,2013,1,Not Improved,0.64410406
+woodtr01,2012,0,Improved,0.44531065
+woodtr01,2013,1,Not Improved,0.88551253
+worleva01,2013,0,Improved,0.05917131
+wrighja01,2011,1,Not Improved,0.75539374
+wrighja01,2012,0,Improved,0.43099734
+wrighwe01,2012,1,Not Improved,0.6464707
+youngch03,2012,0,Improved,0.3978748
+zieglbr01,2013,1,Not Improved,0.94098634
+zieglbr01,2012,1,Not Improved,0.88126034
+zimmejo02,2012,1,Not Improved,0.87442887
+zimmejo02,2013,1,Not Improved,0.77627724
+zimmejo02,2011,1,Not Improved,0.82967377
+zitoba01,2011,0,Improved,0.09038534
