@@ -7,7 +7,6 @@ cache = false
 persist_user_env = false
 mask_user_env = false
 allow_origins = ["*"]
-# CRITICAL: This allows serving files from the 'public' folder
 static_path = "public"
 
 [features]
@@ -25,7 +24,7 @@ favorites = false
 reaction_on_message_received = false
 
 [features.spontaneous_file_upload]
-    enabled = true
+    enabled = false
     accept = ["*/*"]
     max_files = 20
     max_size_mb = 500
@@ -41,6 +40,7 @@ reaction_on_message_received = false
 [UI]
 # Name of the assistant (must match your code if used there)
 name = "BaseBot"
+markdown_path = "./chainlit.md"
 
 # Description of the assistant
 description = "Your AI Baseball Analyst"
@@ -51,7 +51,7 @@ description = "Your AI Baseball Analyst"
 default_avatar_file_url = "/public/BaseBot.png"
 logo_file_url = "/public/BaseBot.png"
 
-custom_css = "/public/styles.css"
+# custom_css = "/public/styles.css"
 
 # Other UI settings
 cot = "full"
