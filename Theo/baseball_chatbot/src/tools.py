@@ -1,4 +1,3 @@
-import random
 import os
 import pandas as pd
 import joblib
@@ -185,13 +184,25 @@ def check_batting_stats(player_id: str):
         predicted_next = row.get('Predicted_Next_Year_OPS', 'N/A')
         actual_next = row.get('Next_Year_OPS', 'TBD')
 
-        # Formatting logic
-        # e.g. "2014: Trend [Increasing] | Prev .850 -> Model Predicts .880 for Next Year (Actual: .875)"
+        # Calculate the actual year being predicted
+        target_year = year + 1
+        
+        # Round floating points to 3 decimals to reduce LLM confusion
+        # Handles 'nan' if it appears in your data
+        try:
+            prev_ops_fmt = f"{float(prev_ops):.3f}"
+        except ValueError:
+            prev_ops_fmt = "N/A"
+            
+        pred_fmt = f"{float(predicted_next):.3f}"
+        actual_fmt = f"{float(actual_next):.3f}"
+        trend_fmt = f"{float(trend):.3f}"
+
+        # New Formatting Logic
         entry = (
-            f"{year}: Trend [{trend}] | "
-            f"Prev OPS: {prev_ops} -> "
-            f"Model Forecast for Next Season: {predicted_next} "
-            f"(Actual: {actual_next})"
+            f"Target Year: {target_year} | "
+            f"Model Forecast: {pred_fmt} (Actual {target_year} OPS: {actual_fmt}) | "
+            f"Based on {year} Data -> OPS: {prev_ops_fmt}"
         )
         timeline.append(entry)
         

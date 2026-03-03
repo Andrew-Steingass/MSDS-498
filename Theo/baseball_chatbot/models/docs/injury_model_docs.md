@@ -4,7 +4,7 @@
 This model is a position-specific decision tree classifier (CART via rpart) trained separately for Pitcher, Catcher, Infield, and Outfield groups to predict next season single-season injury risk. The model outputs the probability that a player experiences an injury in a given season and assigns a Low/Medium/High injury risk classification based on group-specific baseline injury rates.
 
 ## Current Implementation
-The model's outputs for all years are queries per player, enabling trend analysis for tasks such as trading.
+The model's outputs for all years are queried per player, enabling trend analysis for tasks such as trading.
 
 ## Model Training Requirements
 To establish statistical relationships, the training pipeline requires the following features alongside the target variable:
