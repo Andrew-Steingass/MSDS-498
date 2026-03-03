@@ -23,9 +23,9 @@ def build_graph():
     builder.add_node("model_explainer_agent", model_explainer_agent)
     
     # Tool Nodes
-    builder.add_node("injury_tools", get_injury_tool_node())
+    builder.add_node("injury_tools",ToolNode([check_injury_history]))
     builder.add_node("pitching_tools", ToolNode([predict_pitching_2016]))
-    builder.add_node("batting_tools", get_batting_tool_node())
+    builder.add_node("batting_tools", ToolNode([check_batting_stats]))
     builder.add_node("explainer_tools", get_explainer_tool_node())
 
     # 2. Entry Point

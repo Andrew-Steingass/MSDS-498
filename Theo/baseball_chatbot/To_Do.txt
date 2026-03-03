@@ -1,3 +1,0 @@
-Add in ml_inputs instead of normal state to agents workflow
-Add in summarize for state messages
-Add in state pollution option (either router resets when it detects a subject change or scope the agent where it compares to a current_profile and if no match wipes the ml_state).
