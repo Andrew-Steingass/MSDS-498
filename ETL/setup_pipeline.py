@@ -2,7 +2,7 @@ import pandas as pd
 from functions.utils import generate_create_table_sql
 from pprint import pprint
 
-name = 'final_injuries'
+name = 'three_yr_model_labeled_2012_2015'
 fpath = fr"C:\Users\Andy\Documents\msds 498 project\{name}.csv"
 df = pd.read_csv(fpath)
 
